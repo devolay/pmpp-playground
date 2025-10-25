@@ -12,6 +12,7 @@ float*  generateRandomVector(size_t n);
 float** generateRandomSquareMatrix(size_t n);
 void  freeSquareMatrix(int** matrix, size_t n);
 
+
 #ifdef __cplusplus
 }
 #endif

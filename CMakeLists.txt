@@ -13,18 +13,11 @@ enable_language(CUDA)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-# Nice warnings
-if (MSVC)
-    add_compile_options(/W4)
-else()
-    add_compile_options(-Wall -Wextra -Wshadow -Wpedantic)
-endif()
-
-# Place binaries into bin/ for convenience
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(common)
 add_subdirectory(chapters/chapter-01)
+add_subdirectory(chapters/chapter-02)
 
 # Print summary
 message(STATUS "Config Summary:")
