@@ -5,6 +5,7 @@
 
 #include "cuda_check.h"
 #include "cuda_utils.cuh"
+#include "utils.h"
 
 __global__ void vecAddKernel(const float* A, const float* B, float* C, size_t n) {
     size_t i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -16,10 +17,9 @@ int main(int argc, char** argv) {
     if (argc > 1) n = strtoull(argv[1], NULL, 10);
     size_t bytes = n * sizeof(float);
 
-    float *A_h = (float*)malloc(bytes);
-    float *B_h = (float*)malloc(bytes);
+    float *A_h = generateRandomVector(n);
+    float *B_h = generateRandomVector(n);
     float *C_h = (float*)malloc(bytes);
-    for (size_t i = 0; i < n; ++i) { A_h[i] = (float)i; B_h[i] = (float)(2*i); }
 
     float *A_d, *B_d, *C_d;
     CUDA_CHECK(cudaMalloc((void**)&A_d, bytes));
