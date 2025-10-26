@@ -1,5 +1,9 @@
 # Chapter 02: Multidimensional Kernels
 
-add_executable(rgb_to_gray rgb_to_gray.cu)
-target_link_libraries(rgb_to_gray PRIVATE pmpp_common CUDA::cudart)
-set_target_properties(rgb_to_gray PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+add_executable(image_transform image_transform.cu)
+target_link_libraries(image_transform PRIVATE pmpp_common CUDA::cudart)
+set_target_properties(image_transform PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(matrix_multiplication matrix_multiplication.cu)
+target_link_libraries(matrix_multiplication PRIVATE pmpp_common CUDA::cudart)
+set_target_properties(matrix_multiplication PROPERTIES CUDA_SEPARABLE_COMPILATION ON)

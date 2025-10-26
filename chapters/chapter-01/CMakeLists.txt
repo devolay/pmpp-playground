@@ -1,5 +1,4 @@
-
-# Chapter 01: Vector Add (CPU & CUDA)
+# Chapter 01: Vector Add
 
 add_executable(vecadd_cpu vecadd_cpu.c)
 target_link_libraries(vecadd_cpu PRIVATE pmpp_common)
